@@ -23,12 +23,12 @@ public class csv {
 	BufferedReader br = null;
 	String line = "";
 	String cvsSplitBy = ",";
-
+	ArrayList<model> ent = new ArrayList<model>();
 	try {
 
 		//Map<String, String> maps = new HashMap<String, String>();
         
-		ArrayList<model> ent = new ArrayList<model>();
+		
 		
 		br = new BufferedReader(new FileReader(csvFile));
 		while ((line = br.readLine()) != null) {
@@ -60,6 +60,25 @@ public class csv {
 	}
 
 	System.out.println("Done");
+	//return ent;
+  }
+  
+  public ArrayList<model> getlist() throws IOException
+  {
+	  String csvFile = "C:\\Users\\Pritam\\Downloads\\p.csv";
+		BufferedReader br = null;
+		String line = "";
+		String cvsSplitBy = ",";
+		ArrayList<model> ent = new ArrayList<model>();
+		br = new BufferedReader(new FileReader(csvFile));
+		while ((line = br.readLine()) != null) {
+			// use comma as separator
+			String[] s = line.split(cvsSplitBy);
+			if(s[2]!=null&&s[3]!=null){
+				ent.add(new model(s[0],s[1],s[2],s[3]));
+			}
+		}
+		return ent;
   }
 
 }
