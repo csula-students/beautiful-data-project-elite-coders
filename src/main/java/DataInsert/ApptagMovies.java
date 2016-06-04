@@ -22,7 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import static org.elasticsearch.node.NodeBuilder.nodeBuilder;
-
+//insert movies data with additional fields
 /**
  * Quiz elastic search app to see Salaries.csv file better
  *
